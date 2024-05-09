@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/crud.js"></script>
+</head>
+<body>
+    <div class="bgimg-1">
+        <header>
+            <div class="caption">
+                <span class="border">Registro de usuarios</span>
+                <!-- Botón pa abrir el overlay de menú -->
+                <span id="openNavButton">&#9776; Menu</span>
+            </div>
+        </header>
+    </div>
+    
+    <!-- Contenedor del overlay del menú  -->
+    <div id="myNav" class="overlay"> 
+
+        <!-- Botón pa cerrar el overlay -->
+        <a href="#" class="closebtn">&times;</a>
+
+        <!-- Contenido del overlay -->
+        <div class="overlayContent">
+            <a href="#paginaAgregar" id="openPaginaAgregar">&#43; Agregar usuarios</a>
+            <a href="#modificar">&#9998; Modificar usuarios</a>
+            <a href="#mostrar">&#128269; Mostrar usuarios</a>
+            <a href="#eliminar">&#128465; Eliminar usuarios</a>
+        </div>
+    </div>
+
+
+    <section>
+        <div id="paginaAgregar" class="overlayPaginaAgregar">
+            <a href="#" class="closeAgregarBtn">&#8592;</a>
+
+            <div class="contenedorFormulario overlaycontent">
+                <h1>&#43; Agregue un usuario &#43;</h1>
+                <form class="formInline">
+                    
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="John Doe">
+                    <label for="telefono">Fono Contacto</label>
+                    <input type="tel" id="telefono" placeholder="+569 7708 9583">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
