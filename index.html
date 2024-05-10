@@ -29,28 +29,54 @@
         <div class="overlayContent">
             <a href="#paginaAgregar" id="openPaginaAgregar">&#43; Agregar usuarios</a>
             <a href="#modificar">&#9998; Modificar usuarios</a>
-            <a href="#mostrar">&#128269; Mostrar usuarios</a>
+            <a href="#mostrar" id="openPaginaMostrar">&#128269; Mostrar usuarios</a>
             <a href="#eliminar">&#128465; Eliminar usuarios</a>
         </div>
     </div>
+    <div id="paginaAgregar" class="overlayPaginaAgregar">
+        <a href="#" class="closeAgregarBtn">&#8592;</a>
 
-
-    <section>
-        <div id="paginaAgregar" class="overlayPaginaAgregar">
-            <a href="#" class="closeAgregarBtn">&#8592;</a>
-
-            <div class="contenedorFormulario overlaycontent">
-                <h1>&#43; Agregue un usuario &#43;</h1>
-                <form class="formInline">
-                    
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="John Doe">
-                    <label for="telefono">Fono Contacto</label>
-                    <input type="tel" id="telefono" placeholder="+569 7708 9583">
-                    <button type="submit">Submit</button>
-                </form>
+        <div class="contenedorFormulario overlayContent">
+            
+            <div class="titulos">
+                <h1>&#43; AGREGAR USUARIO &#43;</h1>
             </div>
+                <form id="formRegister" class="formInline">
+                    <label for="nameinput">Nombre Completo</label>
+                    <div class="inputnombre">
+                        <input type="text" id="nameInput" placeholder="John Doe">
+                    </div>
+                    <label for="phoneinput">Fono Contacto</label>
+                    <div class="inputtelefono">
+                        <input type="tel" id="phoneInput" placeholder="+569 7708 9583">
+                    </div>
+                    <div class="botonenviar">
+                        <button type="submit" id="submitButton" class="button button--primary">Submit</button>
+                    </div>
+                </form>
         </div>
-    </section>
+    </div>
+    <div id="paginaMostrar" class="overlayPaginaMostrar">
+        <a href="#" class="closeMostrarBtn">&#8592;</a>
+
+        <div class="contenedorTabla overlayContent">
+            <div class="titulos mostrarUsuarios">
+                <h1>&#128269; USUARIOS AGREGADOS &#128269;</h1>
+            </div>
+            <table class="crud__table">
+                <thead>
+                    <tr>
+                        <th class="table__header">Nombre</th>
+                        <th class="table__header">Telefono</th>
+                        <th class="table__header">Accion</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="table__body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
 </html>

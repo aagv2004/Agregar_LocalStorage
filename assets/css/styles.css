@@ -1,6 +1,23 @@
-body, html {
-    height: 100%;
+/* Esto es general pa probar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* Titulo de pagina Agregar y Mostrar */
+.titulos {
+    position: relative;
+    bottom: 100px;
+    background-color: #818181;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+/* Esto es para la imagen de fondo y el texto */
+
 .bgimg-1 {
     background-image: url("../img/backgroundbody.jpg");
     height: 100%;
@@ -34,6 +51,12 @@ body, html {
     padding: 0;
     margin: 0;
 }
+
+/* Esto es para el overlay de menu */
+body, html {
+    height: 100%;
+}
+
 .overlay {
     height: 0%;
     width: 100%;
@@ -90,6 +113,8 @@ span {
     text-align: center;
 }
 
+/* Aquí empieza el overlay de la página "Agregar" */
+
 .overlayPaginaAgregar {
     height: 0%;
     width: 100%;
@@ -101,6 +126,32 @@ span {
     transition: 0.5s;
 }
 
+@media screen and (max-height: 450px) {
+    .overlayPaginaAgregar {overflow-y: auto;}
+    .overlayPaginaAgregar a {font-size: 20px;}
+    .overlayPaginaAgregar .closeAgregarBtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+    .formInline {
+        top: 15px;
+        right: 35px;
+    }
+}
+
+div#paginaAgregar a {
+    text-decoration: none;
+}
+.closeAgregarBtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: rgb(0, 0, 0, 0.9);
+}
+/* Todo lo que tiene que ver con el formulario de la página agregar*/
+
 div.contenedorFormulario {
     text-align: center;
     position: relative;
@@ -108,36 +159,76 @@ div.contenedorFormulario {
     width: 100%;
     margin-top: 30px;
 }
-
 .formInline {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-top: 3%;
-    margin-left: 30%;
+    position: relative;
 }
 
 .formInline label {
     margin: 5px 10px 5px 0px;
+    align-items: center;
+    width: 100%;
 }
 
 .formInline input {
+    /* align-items: center; */
+    text-align: center;
     vertical-align: middle;
     margin: 5px 10px 5px 0px;
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
+    width: 30%;
 }
 
-.formInline button {
+.botonenviar {
+    width: 100%;
+    align-items: center;
+}
+
+.inputnombre, .inputtelefono {
+    width: 100%;
+}
+
+.mostrarUsuarios {
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+}
+
+
+.button {
     padding: 10px 20px;
-    background-color: dodgerblue;
-    border: 1px solid #ddd;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
     color: white;
+    align-items: center;
+    width: 15%;
+    margin-top: 10px;
+    transition: all 0.3s;
 }
 
-.formInline button:hover {
-    background-color: royalblue;
+.button:hover {
+    transform: scale(1.2);
+}
+
+.button--primary {
+    background-color: #049c10;
+    color: #fff;
+}
+
+.button--secondary {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.button--tertiary {
+    background-color: #dc3545;
+    color: #fff;
 }
 
 @media (max-width: 800px) {
@@ -157,10 +248,55 @@ div.contenedorFormulario {
     color: rgb(0, 0, 0, 0.9);
 }
 
-.contenedorFormulario h1{
-    margin-left: -85px;
+/* Todo lo que tiene que ver con la página de mostrar */
+.overlayPaginaMostrar {
+    height: 0%;
+    width: 100%;
+    position: fixed;    
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    transition: 0.5s;
 }
 
-div#paginaAgregar a {
+@media screen and (max-height: 450px) {
+    .overlayPaginaMostrar {overflow-y: auto;}
+    .overlayPaginaMostrar a {font-size: 20px;}
+    .overlayPaginaMostrar .closeMostrarBtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+div#paginaMostrar a {
     text-decoration: none;
+}
+.closeMostrarBtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: rgb(0, 0, 0, 0.9);
+}
+
+/* La tabla */
+.crud__table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.table__header, .table__body td{
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+.table__header {
+    background-color: #f0f0f0;
+}
+
+.table__body td:nth-child(3) {
+    display: flex;
+    justify-content: space-around;
 }
